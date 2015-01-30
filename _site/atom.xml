@@ -4,13 +4,25 @@
  <title>yangcol的博客</title>
  <link href="http://yangcol.github.io/" rel="self"/>
  <link href="http://yangcol.github.io"/>
- <updated>2015-01-30T10:42:50+08:00</updated>
+ <updated>2015-01-30T11:10:34+08:00</updated>
  <id>http://yangcol.github.io</id>
  <author>
    <name>yangqing</name>
    <email>blah@email.test</email>
  </author>
 
+ 
+ <entry>
+   <title>文档局部敏感哈希算法</title>
+   <link href="http://yangcol.github.io/lessons/2015/01/30/%E6%96%87%E6%A1%A3%E5%B1%80%E9%83%A8%E6%95%8F%E6%84%9F%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"/>
+   <updated>2015-01-30T00:00:00+08:00</updated>
+   <id>http://yangcol.github.io/lessons/2015/01/30/文档局部敏感哈希算法</id>
+   <content type="html">
+&lt;h1 id=&quot;section&quot;&gt;文档的局部敏感哈希算法&lt;/h1&gt;
+
+&lt;h2 id=&quot;min-hashing&quot;&gt;最小哈希(min hashing)&lt;/h2&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Jekyll Introduction</title>

@@ -5,10 +5,22 @@
         <description>yangcol的博客 - yangqing</description>
         <link>http://yangcol.github.io</link>
         <link>http://yangcol.github.io</link>
-        <lastBuildDate>2015-01-30T10:42:50+08:00</lastBuildDate>
-        <pubDate>2015-01-30T10:42:50+08:00</pubDate>
+        <lastBuildDate>2015-01-30T11:10:34+08:00</lastBuildDate>
+        <pubDate>2015-01-30T11:10:34+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>文档局部敏感哈希算法</title>
+                <description>
+&lt;h1 id=&quot;section&quot;&gt;文档的局部敏感哈希算法&lt;/h1&gt;
+
+&lt;h2 id=&quot;min-hashing&quot;&gt;最小哈希(min hashing)&lt;/h2&gt;
+</description>
+                <link>http://yangcol.github.io/lessons/2015/01/30/%E6%96%87%E6%A1%A3%E5%B1%80%E9%83%A8%E6%95%8F%E6%84%9F%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95</link>
+                <guid>http://yangcol.github.io/lessons/2015/01/30/文档局部敏感哈希算法</guid>
+                <pubDate>2015-01-30T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>Jekyll Introduction</title>
