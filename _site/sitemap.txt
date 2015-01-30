@@ -1,13 +1,13 @@
 
-http://username.github.io/archive.html
-http://username.github.io/atom.xml
-http://username.github.io/categories.html
-http://username.github.io/index.html
-http://username.github.io/index.html
-http://username.github.io/old_index.html
-http://username.github.io/pages.html
-http://username.github.io/rss.xml
-http://username.github.io/sitemap.txt
-http://username.github.io/tags.html
+http://yangcol.github.io/archive.html
+http://yangcol.github.io/atom.xml
+http://yangcol.github.io/categories.html
+http://yangcol.github.io/index.html
+http://yangcol.github.io/index.html
+http://yangcol.github.io/old_index.html
+http://yangcol.github.io/pages.html
+http://yangcol.github.io/rss.xml
+http://yangcol.github.io/sitemap.txt
+http://yangcol.github.io/tags.html
 
-http://username.github.io/lessons/2011/12/29/jekyll-introduction
+http://yangcol.github.io/lessons/2011/12/29/jekyll-introduction
