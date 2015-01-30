@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>主页</title>
+    <title>文档局部敏感哈希算法</title>
     
     <meta name="author" content="yangqing">
 
@@ -138,21 +138,148 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>主页  <small>我的tagline</small></h1>
+  <h1>文档局部敏感哈希算法 <small>海量数据处理读书笔记</small></h1>
 </div>
 
-<div class="row">
+<div class="row post-full">
   <div class="col-xs-12">
-    
-<p>最近的更新</p>
+    <div class="date">
+      <span>30 January 2015</span>
+    </div>
+    <div class="content">
+      
+<h1 id="section">文档的局部敏感哈希算法</h1>
 
-<ul class="posts">
+<h2 id="min-hashing">最小哈希(min hashing)</h2>
+<p>考虑集合与特征</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>元素</th>
+      <th>S1</th>
+      <th>S2</th>
+      <th>S3</th>
+      <th>S4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>a</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>b</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>c</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>d</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>e</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
   
-    <li><span>30 Jan 2015</span> &raquo; <a href="/%E7%AE%97%E6%B3%95/2015/01/30/%E6%96%87%E6%A1%A3%E5%B1%80%E9%83%A8%E6%95%8F%E6%84%9F%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95">文档局部敏感哈希算法</a></li>
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-open"></i></li>
+      
+      
+
+
   
-    <li><span>29 Dec 2011</span> &raquo; <a href="/lessons/2011/12/29/jekyll-introduction">Jekyll Introduction</a></li>
+     
+    	<li><a href="/categories.html#算法-ref">
+    		算法 <span>1</span>
+    	</a></li>
+    
   
-</ul>
+
+
+    </ul>
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#哈希-ref">哈希 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#最小哈希-ref">最小哈希 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#大数据-ref">大数据 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#LSH-ref">LSH <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#局部敏感哈希-ref">局部敏感哈希 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  
+    <hr>
+    <ul class="pagination">
+    
+      <li class="prev"><a href="/lessons/2011/12/29/jekyll-introduction" title="Jekyll Introduction">&laquo; Previous</a></li>
+    
+      <li><a href="/archive.html">Archive</a></li>
+    
+      <li class="next disabled"><a>Next &rarr;</a>
+    
+    </ul>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'yangcol'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
 
   </div>
 </div>

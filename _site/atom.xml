@@ -4,7 +4,7 @@
  <title>yangcol的博客</title>
  <link href="http://yangcol.github.io/" rel="self"/>
  <link href="http://yangcol.github.io"/>
- <updated>2015-01-30T11:10:34+08:00</updated>
+ <updated>2015-01-30T13:22:45+08:00</updated>
  <id>http://yangcol.github.io</id>
  <author>
    <name>yangqing</name>
@@ -14,13 +14,63 @@
  
  <entry>
    <title>文档局部敏感哈希算法</title>
-   <link href="http://yangcol.github.io/lessons/2015/01/30/%E6%96%87%E6%A1%A3%E5%B1%80%E9%83%A8%E6%95%8F%E6%84%9F%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"/>
+   <link href="http://yangcol.github.io/%E7%AE%97%E6%B3%95/2015/01/30/%E6%96%87%E6%A1%A3%E5%B1%80%E9%83%A8%E6%95%8F%E6%84%9F%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"/>
    <updated>2015-01-30T00:00:00+08:00</updated>
-   <id>http://yangcol.github.io/lessons/2015/01/30/文档局部敏感哈希算法</id>
+   <id>http://yangcol.github.io/%E7%AE%97%E6%B3%95/2015/01/30/文档局部敏感哈希算法</id>
    <content type="html">
 &lt;h1 id=&quot;section&quot;&gt;文档的局部敏感哈希算法&lt;/h1&gt;
 
 &lt;h2 id=&quot;min-hashing&quot;&gt;最小哈希(min hashing)&lt;/h2&gt;
+&lt;p&gt;考虑集合与特征&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;元素&lt;/th&gt;
+      &lt;th&gt;S1&lt;/th&gt;
+      &lt;th&gt;S2&lt;/th&gt;
+      &lt;th&gt;S3&lt;/th&gt;
+      &lt;th&gt;S4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;c&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;d&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;e&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 </content>
  </entry>
  
