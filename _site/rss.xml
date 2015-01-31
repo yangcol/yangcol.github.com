@@ -5,8 +5,8 @@
         <description>yangcol的博客 - yangqing</description>
         <link>http://yangcol.github.io</link>
         <link>http://yangcol.github.io</link>
-        <lastBuildDate>2015-01-30T13:26:44+08:00</lastBuildDate>
-        <pubDate>2015-01-30T13:26:44+08:00</pubDate>
+        <lastBuildDate>2015-01-30T14:47:52+08:00</lastBuildDate>
+        <pubDate>2015-01-30T14:47:52+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -16,7 +16,10 @@
 &lt;h1 id=&quot;section&quot;&gt;文档的局部敏感哈希算法&lt;/h1&gt;
 
 &lt;h2 id=&quot;min-hashing&quot;&gt;最小哈希(min hashing)&lt;/h2&gt;
-&lt;p&gt;考虑集合与特征&lt;/p&gt;
+&lt;p&gt;最小哈希的目的是为特征生成特征签名。为什么需要特征签名呢？举个例子，对于一篇千字文章，如果我想比较和另一篇文章的相似度，那么用直观的方法进行比较是很困难的。所以，需要对文章进行特征提取，提取的特征集合通常被称作签名，也有指纹的叫法。&lt;/p&gt;
+
+&lt;p&gt;先给出最小哈希的计算方法：
+考虑集合与特征&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -66,6 +69,74 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;p&gt;S1有特征{a,d}
+S2有特征{c}
+S3有特征{b,d,e}
+S4有特征{a,c,d}&lt;/p&gt;
+
+&lt;p&gt;首先对行进行随机排(洗牌，shuffle)(稍后介绍这么做的意义)。任意一列的最小哈希值是元素Si拥有的第一个特征。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;元素&lt;/th&gt;
+      &lt;th&gt;S1&lt;/th&gt;
+      &lt;th&gt;S2&lt;/th&gt;
+      &lt;th&gt;S3&lt;/th&gt;
+      &lt;th&gt;S4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;&lt;font color=&quot;#F00&quot;&gt;1&lt;/font&gt;&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;e&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;&lt;font color=&quot;#F00&quot;&gt;1&lt;/font&gt;&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;&lt;font color=&quot;#F00&quot;&gt;1&lt;/font&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;c&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;&lt;font color=&quot;#F00&quot;&gt;1&lt;/font&gt;&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;d&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;以上是矩阵的一个行排列转换结果
+我们有h(S1) = a, h(S2) = c, h(S3) = b, h(S4) = a&lt;/p&gt;
+
+&lt;p&gt;那么，如果两个元素，他们的特征相似（拥有若干个相同的特征），那么，他们的最小哈希值&lt;strong&gt;&lt;em&gt;更有可能&lt;/em&gt;&lt;/strong&gt;相同。&lt;/p&gt;
+
+&lt;p&gt;这个“更有可能”的概率是多大呢？
+我们以集合S1和S2所对应的列为例，它们每个元素所在的行按照所有可能的结果分成如下三类：
+(1)x类
+	同一行的两个元素都是1。比如S3,S4的d特征。
+(2)y类
+	同一行的两个元素不一样（一个为0，一个为1）。&lt;/p&gt;
 </description>
                 <link>http://yangcol.github.io/%E7%AE%97%E6%B3%95/2015/01/30/%E6%96%87%E6%A1%A3%E5%B1%80%E9%83%A8%E6%95%8F%E6%84%9F%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95</link>
                 <guid>http://yangcol.github.io/%E7%AE%97%E6%B3%95/2015/01/30/文档局部敏感哈希算法</guid>
