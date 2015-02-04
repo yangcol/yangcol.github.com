@@ -5,10 +5,52 @@
         <description>yangcol的博客 - yangqing</description>
         <link>http://yangcol.github.io</link>
         <link>http://yangcol.github.io</link>
-        <lastBuildDate>2015-01-31T14:14:37+08:00</lastBuildDate>
-        <pubDate>2015-01-31T14:14:37+08:00</pubDate>
+        <lastBuildDate>2015-02-04T16:42:59+08:00</lastBuildDate>
+        <pubDate>2015-02-04T16:42:59+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Mysql数据导入到sqlite中</title>
+                <description>
+&lt;h2 id=&quot;section&quot;&gt;介绍一个工作中遇到的问题&lt;/h2&gt;
+
+&lt;p&gt;在开发的过程中，遇到这样一个问题，我这里的开发环境是使用mysql，产生了一批测试数据，需要把数据导出给前端同事测试用，前端同事使用的是sqlite3。&lt;/p&gt;
+
+&lt;h3 id=&quot;mysqlcsv&quot;&gt;步骤1. 导出mysql的输入到csv格式&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;	select * into outfile &#39;/tmp/statdata.csv&#39; fields terminated by &#39;,&#39; enclosed by &#39;&quot;&#39; escaped by &#39;\\&#39; LINES TERMINATED BY &#39;\n&#39; from statdata;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;sqlite3&quot;&gt;步骤2. 导入数据到sqlite3&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;在shell中执行以下命令：
+
+	sqlite3 {targetdb}
+
+	# 创建表结构
+	create table statdata(
+	`id` NOT NULL,
+	`name` VARCHAR(32) NOT NULL, 
+	`key` VARCHAR(128)  NOT NULL ,
+	`duration` VARCHAR(32) NOT NULL,
+	`date` DATETIME   NOT NULL,  
+	`value` INT,
+	PRIMARY KEY(`id`));
+
+	.separator &#39;,&#39;
+	.import {filename}  {tablename}
+
+结束
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;评论一下&lt;/h3&gt;
+&lt;p&gt;开发环境和测试环境使用不同的数据库，我认为不是一个好的风格，即使sqlite3和mysql很多语句都通用，但是它们还是有不少区别，比如在查询语句的一些保留字的处理上。而且，如果需要使用mysql的一些特性，比方存储引擎，还是会带来环境迁移的问题的。&lt;/p&gt;
+</description>
+                <link>http://yangcol.github.io/service/2015/02/04/Mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E5%88%B0sqlite%E4%B8%AD</link>
+                <guid>http://yangcol.github.io/service/2015/02/04/Mysql数据导入到sqlite中</guid>
+                <pubDate>2015-02-04T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>文档局部敏感哈希算法</title>
@@ -151,8 +193,18 @@ S4有特征{a,c,d}&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;最小哈希签名&lt;/h2&gt;
-&lt;p&gt;还是上面介绍的矩阵，我们知道了，如果只进行一次最小哈希计算，那么两个元素的最小哈希值相同的概率是x / (x + y)。为了降低这个概率，我们可以进行多次的最小哈希值计算，那么，两个元素的最小哈希值相同的概率会变成 (x / (x+y)) ^ n。n是我们计算最小哈希值的次数。&lt;/p&gt;
+&lt;p&gt;还是上面介绍的矩阵，我们知道了，如果只进行一次最小哈希计算，那么两个元素的最小哈希值相同的概率是x / (x + y)。为了降低这个概率，我们可以进行多次的最小哈希值计算，那么，两个元素的最小哈希值相同的概率会变成 (x / (x+y)) ^ n。n是我们计算最小哈希值的次数。 （这种现象在计算系统的可靠性中尤为显著，一个串行系统的可靠性是所有部件可靠性的乘积。在一个5000台机器的集群，如果每个机器是99.99%的可靠性的，那么，这个集群没有机器出问题的可靠性是60.65%）&lt;/p&gt;
 
+&lt;p&gt;下面继续回到最小哈希签名，我们对上面的矩阵M做n次洗牌，然后每次使用一个哈希函数h1 ~ hn，则可以构建S(S是S1~Sn的集合)的最小哈希签名向量[h1(S), h2(S), ···, hn(S)]，该向量通常写成列向量方式。因此，基于矩阵M可以构建一个签名矩阵。&lt;/p&gt;
+
+&lt;p&gt;签名矩阵和M的列数相同，但是行数只有n。对于行很多（上万量级）的矩阵来说，n是很小的值。达到了实现签名的目的（可以用签名矩阵来表征实际上的矩阵M）。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;最小哈希签名的计算&lt;/h3&gt;
+&lt;p&gt;上述对最小哈希签名的产生还有一个实现的问题：洗牌(shuffle)。对大规模特征矩阵进行显式排列转换是不可行的。即使对于上百万甚至数十亿的行选择一个随机排列转换也极其消耗时间，而对行进行必要的排序则需要花更多地时间，因此，对矩阵进行洗牌操作，看似不错，但缺乏可操作性。&lt;/p&gt;
+
+&lt;p&gt;怎么办呢？&lt;/p&gt;
+
+&lt;p&gt;幸运的是，我们可以通过一个随机哈希函数来模拟随机排列转换的效果，该函数将行号映射到与行数目大致相当的桶中。哈希函数总是会有碰撞的(collision)，碰撞系数是1/m(m是桶的数量)(也就是说，任何两个记录都会有1/m的概率“碰撞”，如果有n条记录，那么碰撞的概率是(n-1)/m)。&lt;/p&gt;
 </description>
                 <link>http://yangcol.github.io/algorithm/2015/01/30/%E6%96%87%E6%A1%A3%E5%B1%80%E9%83%A8%E6%95%8F%E6%84%9F%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95</link>
                 <guid>http://yangcol.github.io/algorithm/2015/01/30/文档局部敏感哈希算法</guid>

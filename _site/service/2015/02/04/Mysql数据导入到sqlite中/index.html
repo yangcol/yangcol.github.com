@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>分类</title>
+    <title>Mysql数据导入到sqlite中</title>
     
     <meta name="author" content="yangqing">
 
@@ -81,7 +81,7 @@
     
       
       	
-      	<li class="active"><a href="/categories.html" class="active">分类</a></li>
+      	<li><a href="/categories.html">分类</a></li>
       	
       
     
@@ -138,27 +138,60 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>分类 </h1>
+  <h1>Mysql数据导入到sqlite中 <small>工作中碰到的一个问题</small></h1>
 </div>
 
-<div class="row">
+<div class="row post-full">
   <div class="col-xs-12">
-    
+    <div class="date">
+      <span>04 February 2015</span>
+    </div>
+    <div class="content">
+      
+<h2 id="section">介绍一个工作中遇到的问题</h2>
 
-<ul class="tag_box inline">
+<p>在开发的过程中，遇到这样一个问题，我这里的开发环境是使用mysql，产生了一批测试数据，需要把数据导出给前端同事测试用，前端同事使用的是sqlite3。</p>
+
+<h3 id="mysqlcsv">步骤1. 导出mysql的输入到csv格式</h3>
+
+<pre><code>	select * into outfile '/tmp/statdata.csv' fields terminated by ',' enclosed by '"' escaped by '\\' LINES TERMINATED BY '\n' from statdata;
+</code></pre>
+
+<h3 id="sqlite3">步骤2. 导入数据到sqlite3</h3>
+
+<pre><code>在shell中执行以下命令：
+
+	sqlite3 {targetdb}
+
+	# 创建表结构
+	create table statdata(
+	`id` NOT NULL,
+	`name` VARCHAR(32) NOT NULL, 
+	`key` VARCHAR(128)  NOT NULL ,
+	`duration` VARCHAR(32) NOT NULL,
+	`date` DATETIME   NOT NULL,  
+	`value` INT,
+	PRIMARY KEY(`id`));
+
+	.separator ','
+	.import {filename}  {tablename}
+
+结束
+</code></pre>
+
+<h3 id="section-1">评论一下</h3>
+<p>开发环境和测试环境使用不同的数据库，我认为不是一个好的风格，即使sqlite3和mysql很多语句都通用，但是它们还是有不少区别，比如在查询语句的一些保留字的处理上。而且，如果需要使用mysql的一些特性，比方存储引擎，还是会带来环境迁移的问题的。</p>
+
+    </div>
+
   
-  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-open"></i></li>
+      
+      
 
 
   
-     
-    	<li><a href="/categories.html#lessons-ref">
-    		lessons <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#algorithm-ref">
-    		algorithm <span>1</span>
-    	</a></li>
      
     	<li><a href="/categories.html#service-ref">
     		service <span>1</span>
@@ -167,69 +200,58 @@
   
 
 
-</ul>
-
-
- 
-  <h2 id="lessons-ref">lessons</h2>
-  <ul>
-      
+    </ul>
     
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-tags"></i></li>
+      
+      
 
 
   
-    
-      
-      	
-      	<li><a href="/lessons/2011/12/29/jekyll-introduction">Jekyll Introduction</a></li>
-      	
-      
+     
+    	<li><a href="/tags.html#mysql-ref">mysql <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#sqlite-ref">sqlite <span>1</span></a></li>
     
   
 
 
 
-  </ul>
- 
-  <h2 id="algorithm-ref">algorithm</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/algorithm/2015/01/30/%E6%96%87%E6%A1%A3%E5%B1%80%E9%83%A8%E6%95%8F%E6%84%9F%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95">文档局部敏感哈希算法</a></li>
-      	
-      
+    </ul>
     
   
-
-
-
-  </ul>
- 
-  <h2 id="service-ref">service</h2>
-  <ul>
-      
+    <hr>
+    <ul class="pagination">
+    
+      <li class="prev"><a href="/algorithm/2015/01/30/%E6%96%87%E6%A1%A3%E5%B1%80%E9%83%A8%E6%95%8F%E6%84%9F%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95" title="文档局部敏感哈希算法">&laquo; Previous</a></li>
+    
+      <li><a href="/archive.html">Archive</a></li>
+    
+      <li class="next disabled"><a>Next &rarr;</a>
+    
+    </ul>
+    <hr>
     
 
 
-  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'yangcol'; // required: replace example with your forum shortname
     
-      
-      	
-      	<li><a href="/service/2015/02/04/Mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E5%88%B0sqlite%E4%B8%AD">Mysql数据导入到sqlite中</a></li>
-      	
-      
-    
-  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
-
-
-  </ul>
 
 
 
