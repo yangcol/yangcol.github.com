@@ -4,13 +4,63 @@
  <title>yangcol的博客</title>
  <link href="http://yangcol.github.io/" rel="self"/>
  <link href="http://yangcol.github.io"/>
- <updated>2015-02-04T21:41:25+08:00</updated>
+ <updated>2015-02-08T16:56:49+08:00</updated>
  <id>http://yangcol.github.io</id>
  <author>
    <name>yangqing</name>
    <email>blah@email.test</email>
  </author>
 
+ 
+ <entry>
+   <title>Rails中many to many的用法</title>
+   <link href="http://yangcol.github.io/service/2015/02/08/Rails%E4%B8%ADmany%20to%20many%E7%9A%84%E7%94%A8%E6%B3%95"/>
+   <updated>2015-02-08T00:00:00+08:00</updated>
+   <id>http://yangcol.github.io/service/2015/02/08/Rails中many to many的用法</id>
+   <content type="html">
+&lt;p&gt;Rails中的关键字has_many以及belongs_to用来描述多对多的实体关系&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;relationship.png&quot; alt=&quot;关系图&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Tmux的常用方法</title>
+   <link href="http://yangcol.github.io/service/2015/02/06/Tmux%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"/>
+   <updated>2015-02-06T00:00:00+08:00</updated>
+   <id>http://yangcol.github.io/service/2015/02/06/Tmux的常用方法</id>
+   <content type="html">
+&lt;h1 id=&quot;tmux&quot;&gt;Tmux工具说明&lt;/h1&gt;
+
+&lt;p&gt;我的tmux配置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;set -g prefix C-s 
+
+setw -g mode-keys vi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;c-b--&quot;&gt;纵向分屏 C-b + “&lt;/h2&gt;
+
+&lt;h2 id=&quot;c-b---1&quot;&gt;横向分屏 C-b + %&lt;/h2&gt;
+
+&lt;h2 id=&quot;c-b--z-zoom-in-out&quot;&gt;C-b + z Zoom In-out&lt;/h2&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu 上安装gem mysql2</title>
+   <link href="http://yangcol.github.io/service/2015/02/05/Ubuntu%20%E4%B8%8A%E5%AE%89%E8%A3%85gem%20mysql2"/>
+   <updated>2015-02-05T00:00:00+08:00</updated>
+   <id>http://yangcol.github.io/service/2015/02/05/Ubuntu 上安装gem mysql2</id>
+   <content type="html">
+&lt;h1 id=&quot;ubuntu&quot;&gt;安装ubuntu需要的必要组件&lt;/h1&gt;
+&lt;p&gt;安装mysql2的gem文件时，需要进行编译，引用的头文件是包libmysqld-dev提供的，
+执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	sudo apt-get install libmysqld-dev
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Mysql数据导入到sqlite中</title>
