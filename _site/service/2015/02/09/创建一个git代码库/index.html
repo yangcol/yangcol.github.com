@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Tmux的常用方法</title>
+    <title>创建一个git代码库</title>
     
     <meta name="author" content="yangqing">
 
@@ -138,30 +138,56 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Tmux的常用方法 <small>tmux常用方法</small></h1>
+  <h1>创建一个git代码库 <small>git</small></h1>
 </div>
 
 <div class="row post-full">
   <div class="col-xs-12">
     <div class="date">
-      <span>06 February 2015</span>
+      <span>09 February 2015</span>
     </div>
     <div class="content">
-      
-<h1 id="tmux">Tmux工具说明</h1>
+      <h2 id="ssh-server">在服务端安装好ssh server</h2>
 
-<p>我的tmux配置</p>
+<ol>
+  <li>安装ssh server</li>
+  <li>开启ssh服务</li>
+</ol>
 
-<pre><code>set -g prefix C-s 
+<h2 id="ssh">在客户端上能够ssh登陆</h2>
 
-setw -g mode-keys vi
+<h2 id="section">初始化代码库</h2>
+<p>在用户目录下创建一个文件夹</p>
+
+<pre><code>cd ~
+mkdir test.git
+cd test.git
+git init --bare
 </code></pre>
 
-<h2 id="c-b--">纵向分屏 C-b + “</h2>
+<h2 id="clone">远程clone</h2>
 
-<h2 id="c-b---1">横向分屏 C-b + %</h2>
+<p>在客户端使用git clone 命令</p>
 
-<h2 id="c-b--z-zoom-in-out">C-b + z Zoom In-out</h2>
+<p>git clone {username}@{目标ip或者域名}:{路径}</p>
+
+<p>比如对应上面的git我们使用 git clone myname@myhost:~/test.git</p>
+
+<p>增加一个README再提交</p>
+
+<pre><code>cd test
+touch README
+git add README
+git commit -m "add readme"
+git push origin master
+</code></pre>
+
+<p>如果成功了，我们可以看到类似下面的控制台输出：</p>
+
+<pre><code>Counting objects: 3, done.
+Writing objects: 100% (3/3), 212 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+</code></pre>
 
     </div>
 
@@ -193,9 +219,9 @@ setw -g mode-keys vi
 
   
      
-    	<li><a href="/tags.html#ubuntu-ref">ubuntu <span>3</span></a></li>
+    	<li><a href="/tags.html#git-ref">git <span>1</span></a></li>
      
-    	<li><a href="/tags.html#tmux-ref">tmux <span>3</span></a></li>
+    	<li><a href="/tags.html#server-ref">server <span>1</span></a></li>
     
   
 
@@ -207,11 +233,11 @@ setw -g mode-keys vi
     <hr>
     <ul class="pagination">
     
-      <li class="prev"><a href="/service/2015/02/05/Ubuntu%20%E4%B8%8A%E5%AE%89%E8%A3%85gem%20mysql2" title="Ubuntu 上安装gem mysql2">&laquo; Previous</a></li>
+      <li class="prev"><a href="/service/2015/02/09/%E4%BB%8B%E7%BB%8D%E4%BD%BF%E7%94%A8Git%E5%BC%80%E5%8F%91%E7%9A%84%E6%99%AE%E9%80%9A%E6%B5%81%E7%A8%8B" title="介绍使用git开发的普通流程">&laquo; Previous</a></li>
     
       <li><a href="/archive.html">Archive</a></li>
     
-      <li class="next"><a href="/service/2015/02/08/Awk%E5%9C%A8%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E7%9A%84%E6%96%B9%E4%BE%BF%E7%94%A8%E6%B3%95" title="Awk在日志处理的方便用法">Next &raquo;</a></li>
+      <li class="next"><a href="/2015/02/09/%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8BGMM" title="高斯混合模型gmm">Next &raquo;</a></li>
     
     </ul>
     <hr>

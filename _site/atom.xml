@@ -4,13 +4,102 @@
  <title>yangcol的博客</title>
  <link href="http://yangcol.github.io/" rel="self"/>
  <link href="http://yangcol.github.io"/>
- <updated>2015-02-08T16:56:49+08:00</updated>
+ <updated>2015-02-09T13:06:34+08:00</updated>
  <id>http://yangcol.github.io</id>
  <author>
    <name>yangqing</name>
    <email>blah@email.test</email>
  </author>
 
+ 
+ <entry>
+   <title>高斯混合模型gmm</title>
+   <link href="http://yangcol.github.io/2015/02/09/%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8BGMM"/>
+   <updated>2015-02-09T00:00:00+08:00</updated>
+   <id>http://yangcol.github.io/2015/02/09/高斯混合模型GMM</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>创建一个git代码库</title>
+   <link href="http://yangcol.github.io/service/2015/02/09/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAgit%E4%BB%A3%E7%A0%81%E5%BA%93"/>
+   <updated>2015-02-09T00:00:00+08:00</updated>
+   <id>http://yangcol.github.io/service/2015/02/09/创建一个git代码库</id>
+   <content type="html">&lt;h2 id=&quot;ssh-server&quot;&gt;在服务端安装好ssh server&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;安装ssh server&lt;/li&gt;
+  &lt;li&gt;开启ssh服务&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ssh&quot;&gt;在客户端上能够ssh登陆&lt;/h2&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;初始化代码库&lt;/h2&gt;
+&lt;p&gt;在用户目录下创建一个文件夹&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~
+mkdir test.git
+cd test.git
+git init --bare
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;clone&quot;&gt;远程clone&lt;/h2&gt;
+
+&lt;p&gt;在客户端使用git clone 命令&lt;/p&gt;
+
+&lt;p&gt;git clone {username}@{目标ip或者域名}:{路径}&lt;/p&gt;
+
+&lt;p&gt;比如对应上面的git我们使用 git clone myname@myhost:~/test.git&lt;/p&gt;
+
+&lt;p&gt;增加一个README再提交&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd test
+touch README
+git add README
+git commit -m &quot;add readme&quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果成功了，我们可以看到类似下面的控制台输出：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Counting objects: 3, done.
+Writing objects: 100% (3/3), 212 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>介绍使用git开发的普通流程</title>
+   <link href="http://yangcol.github.io/service/2015/02/09/%E4%BB%8B%E7%BB%8D%E4%BD%BF%E7%94%A8Git%E5%BC%80%E5%8F%91%E7%9A%84%E6%99%AE%E9%80%9A%E6%B5%81%E7%A8%8B"/>
+   <updated>2015-02-09T00:00:00+08:00</updated>
+   <id>http://yangcol.github.io/service/2015/02/09/介绍使用Git开发的普通流程</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Em算法</title>
+   <link href="http://yangcol.github.io/algorithm/2015/02/09/EM%E7%AE%97%E6%B3%95"/>
+   <updated>2015-02-09T00:00:00+08:00</updated>
+   <id>http://yangcol.github.io/algorithm/2015/02/09/EM算法</id>
+   <content type="html">
+&lt;h2 id=&quot;section&quot;&gt;极大似然估计&lt;/h2&gt;
+&lt;p&gt;### 找出与样本的分布最接近的概率&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;简单地例子&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;10次抛硬币的结果是：正正反正正正反反正正
+
+假设p是每次抛硬币结果为正的概率。则：
+得到这样的实验结果的概率是：
+
+P = pp(1-p) ppp(1-p)(1-p)pp
+   = p7(1 − p)3
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Rails中many to many的用法</title>
@@ -20,7 +109,26 @@
    <content type="html">
 &lt;p&gt;Rails中的关键字has_many以及belongs_to用来描述多对多的实体关系&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;relationship.png&quot; alt=&quot;关系图&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/relationship.png&quot; alt=&quot;关系图&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Awk在日志处理的方便用法</title>
+   <link href="http://yangcol.github.io/service/2015/02/08/Awk%E5%9C%A8%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E7%9A%84%E6%96%B9%E4%BE%BF%E7%94%A8%E6%B3%95"/>
+   <updated>2015-02-08T00:00:00+08:00</updated>
+   <id>http://yangcol.github.io/service/2015/02/08/Awk在日志处理的方便用法</id>
+   <content type="html">&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cat *&lt;/td&gt;
+      &lt;td&gt;grep server&lt;/td&gt;
+      &lt;td&gt;awk -F ‘,’ ‘{print $4}’&lt;/td&gt;
+      &lt;td&gt;grep http&lt;/td&gt;
+      &lt;td&gt;head&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 </content>
  </entry>
  

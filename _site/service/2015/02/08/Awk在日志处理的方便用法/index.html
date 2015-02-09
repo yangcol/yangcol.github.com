@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Tmux的常用方法</title>
+    <title>Awk在日志处理的方便用法</title>
     
     <meta name="author" content="yangqing">
 
@@ -138,30 +138,26 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Tmux的常用方法 <small>tmux常用方法</small></h1>
+  <h1>Awk在日志处理的方便用法 <small>Awk在日志处理的方便用法</small></h1>
 </div>
 
 <div class="row post-full">
   <div class="col-xs-12">
     <div class="date">
-      <span>06 February 2015</span>
+      <span>08 February 2015</span>
     </div>
     <div class="content">
-      
-<h1 id="tmux">Tmux工具说明</h1>
-
-<p>我的tmux配置</p>
-
-<pre><code>set -g prefix C-s 
-
-setw -g mode-keys vi
-</code></pre>
-
-<h2 id="c-b--">纵向分屏 C-b + “</h2>
-
-<h2 id="c-b---1">横向分屏 C-b + %</h2>
-
-<h2 id="c-b--z-zoom-in-out">C-b + z Zoom In-out</h2>
+      <table>
+  <tbody>
+    <tr>
+      <td>cat *</td>
+      <td>grep server</td>
+      <td>awk -F ‘,’ ‘{print $4}’</td>
+      <td>grep http</td>
+      <td>head</td>
+    </tr>
+  </tbody>
+</table>
 
     </div>
 
@@ -193,9 +189,11 @@ setw -g mode-keys vi
 
   
      
-    	<li><a href="/tags.html#ubuntu-ref">ubuntu <span>3</span></a></li>
+    	<li><a href="/tags.html#awk-ref">awk <span>1</span></a></li>
      
-    	<li><a href="/tags.html#tmux-ref">tmux <span>3</span></a></li>
+    	<li><a href="/tags.html#grep-ref">grep <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#cat-ref">cat <span>1</span></a></li>
     
   
 
@@ -207,11 +205,11 @@ setw -g mode-keys vi
     <hr>
     <ul class="pagination">
     
-      <li class="prev"><a href="/service/2015/02/05/Ubuntu%20%E4%B8%8A%E5%AE%89%E8%A3%85gem%20mysql2" title="Ubuntu 上安装gem mysql2">&laquo; Previous</a></li>
+      <li class="prev"><a href="/service/2015/02/06/Tmux%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95" title="Tmux的常用方法">&laquo; Previous</a></li>
     
       <li><a href="/archive.html">Archive</a></li>
     
-      <li class="next"><a href="/service/2015/02/08/Awk%E5%9C%A8%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E7%9A%84%E6%96%B9%E4%BE%BF%E7%94%A8%E6%B3%95" title="Awk在日志处理的方便用法">Next &raquo;</a></li>
+      <li class="next"><a href="/service/2015/02/08/Rails%E4%B8%ADmany%20to%20many%E7%9A%84%E7%94%A8%E6%B3%95" title="Rails中many to many的用法">Next &raquo;</a></li>
     
     </ul>
     <hr>

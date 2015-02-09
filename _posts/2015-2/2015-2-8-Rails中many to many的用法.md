@@ -8,4 +8,4 @@ tags : [ubuntu, tmux]
 
 Rails中的关键字has_many以及belongs_to用来描述多对多的实体关系
 
-![关系图](public/img/relationship.png)
+![关系图](/public/img/relationship.png)
