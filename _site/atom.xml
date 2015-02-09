@@ -4,7 +4,7 @@
  <title>yangcol的博客</title>
  <link href="http://yangcol.github.io/" rel="self"/>
  <link href="http://yangcol.github.io"/>
- <updated>2015-02-09T13:06:34+08:00</updated>
+ <updated>2015-02-09T13:48:01+08:00</updated>
  <id>http://yangcol.github.io</id>
  <author>
    <name>yangqing</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>高斯混合模型gmm</title>
-   <link href="http://yangcol.github.io/2015/02/09/%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8BGMM"/>
+   <link href="http://yangcol.github.io/service/2015/02/09/%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8BGMM"/>
    <updated>2015-02-09T00:00:00+08:00</updated>
-   <id>http://yangcol.github.io/2015/02/09/高斯混合模型GMM</id>
+   <id>http://yangcol.github.io/service/2015/02/09/高斯混合模型GMM</id>
    <content type="html">
 </content>
  </entry>

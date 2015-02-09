@@ -10,7 +10,7 @@ http://yangcol.github.io/rss.xml
 http://yangcol.github.io/sitemap.txt
 http://yangcol.github.io/tags.html
 
-http://yangcol.github.io/2015/02/09/%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8BGMM
+http://yangcol.github.io/service/2015/02/09/%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8BGMM
 http://yangcol.github.io/service/2015/02/09/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAgit%E4%BB%A3%E7%A0%81%E5%BA%93
 http://yangcol.github.io/service/2015/02/09/%E4%BB%8B%E7%BB%8D%E4%BD%BF%E7%94%A8Git%E5%BC%80%E5%8F%91%E7%9A%84%E6%99%AE%E9%80%9A%E6%B5%81%E7%A8%8B
 http://yangcol.github.io/algorithm/2015/02/09/EM%E7%AE%97%E6%B3%95

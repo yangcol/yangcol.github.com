@@ -1,4 +1,5 @@
 ---
+dpn: rails-many-2-many
 layout: post
 category : service
 tagline: "tmux常用方法"
