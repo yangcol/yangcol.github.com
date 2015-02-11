@@ -1,8 +1,8 @@
 ---
 dpn: rails-many-2-many
 layout: post
-category : service
-tagline: "tmux常用方法"
+category : 服务端开发
+tagline: "rails的many to manay 样例"
 tags : [ubuntu, tmux]
 ---
 {% include JB/setup %}

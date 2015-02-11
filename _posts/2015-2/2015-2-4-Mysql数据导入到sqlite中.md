@@ -1,7 +1,6 @@
 ---
-dpn: mysql-2-sqlite
 layout: post
-category : service
+category : 服务端开发
 tagline: "工作中碰到的一个问题"
 tags : [mysql, sqlite]
 ---

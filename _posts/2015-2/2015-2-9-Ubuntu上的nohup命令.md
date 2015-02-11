@@ -1,6 +1,6 @@
 ---
 layout: post
-category : service
+category : 服务端开发
 tagline: "nohup"
 tags : [service, ubuntu]
 ---

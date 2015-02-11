@@ -1,6 +1,6 @@
 ---
 layout: post
-category : service
+category : 服务端开发
 tagline: "mysql的explain指令"
 tags : [mysql, explain]
 ---

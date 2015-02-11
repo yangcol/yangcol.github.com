@@ -1,7 +1,6 @@
 ---
-dpn: ubunt-gem-mysql2
 layout: post
-category : service
+category : 服务端开发
 tagline: "ruby gem mysql开发包安装"
 tags : [mysql, gem, rails, mysql2]
 ---
