@@ -1,11 +1,11 @@
 ---
 layout: page
 title: 主页
-tagline: 我的tagline
+tagline: yangcol的技术家园
 ---
 {% include JB/setup %}
 
-最近的更新
+最近的文章
 
 <ul class="posts">
   {% for post in site.posts %}

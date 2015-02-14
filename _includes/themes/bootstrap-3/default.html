@@ -63,6 +63,12 @@
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
           </ul>
+
+          <ul class="nav navbar-nav">
+            {% assign pages_list = site.pages %}
+            {%assign group='aboutme' %}
+            {% include JB/pages_list%}
+          </ul>
 <!--          我把搜索关闭了 <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
