@@ -12,46 +12,21 @@ DAG => Directed acyclic graph. 有向无环图
 
 Topological sort. Redraw DAG so all edges point upwards.
 
-让所有的节点向上指
+可以从下面的两张图看toplogy sort的实际效果:
 
-Acyclic
+排序之前:
+![](/public/img/dag-toplogy-sort-before.png)
 
-Topological sort in a DAG: correctness proof
-￼Proposition. Reverse DFS postorder of a DAG is a topological order.
-￼Pf. Consider any edge v→w. When dfs(v) is called: ・Case 1: dfs(w) has already been called and returned.
-dfs(0)
-  dfs(1)
-dfs(4)
-4 done 1 done
-  dfs(2)
-  2 done
-  dfs(5)
-check 2
-5 done 0 done
-check 1
-check 2
-dfs(3)
-  check 2
-  check 4
-  check 5
-  dfs(6)
-check 0
-check 4
-6 done 3 done
-check 4
-check 5
-check 6
-done
-Thus, w was done before v.
-・Case 2: dfs(w) has not yet been called.
-dfs(w) will get called directly or indirectly by dfs(v) and will finish before dfs(v). Thus, w will be done before v.
-・Case 3: dfs(w) has already been called,
-but has not yet returned.
-Can’t happen in a DAG: function call stack contains path from w to v, so v→w would complete a cycle.
+排序之后:
+![](/public/img/dag-toplogy-sorted.png)
+
+排序之后，所有的节点都"向上"
+
+### 澄清
+***toplogy sort和常见的排序算法本质上是有区别的。排序算法通常是对数组或者链表这样的线性数据结构，默认是从下标0开始访问的，而图是没有这样的限制。toplogy sort只是"强制"给图规定了一个顺序，让图能够用数组的方式去理解。***
 
 
-
-Topological sort的证明
+##Topological sort的证明
 反转的DFS postorder是DAG的topological顺序
 
 证明如下：考虑任意的边 v->w。当dfs(v)被调用

@@ -12,10 +12,10 @@ title : yangcol的博客
 tagline: Site Tagline
 author :
   name : yangqing
-  email : blah@email.test
-  github : https://github.com/yangcol
-  twitter : username
-  feedburner : feedname
+  email : yangq86@gmail.com
+  github : yangcol
+  # twitter : username
+  # feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
