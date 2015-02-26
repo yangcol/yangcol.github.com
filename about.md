@@ -11,5 +11,6 @@ group: aboutme
 曾经心比天高
 
 联系方式：
-email			[yangqing - yangq86@gmail.com](yangqing - yangq86@gmail.com)
-github: 			[github.com/yangcol](github.com/yangcol)
+
+* email:		yangq86@gmail.com
+* github: 			[https://github.com/yangcol](https://github.com/yangcol)
