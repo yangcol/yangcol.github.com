@@ -1,6 +1,7 @@
 ---
 layout: page
-title: 热爱技术，热爱生活
+title: yangcol的技术家园
+tagline: 热爱技术，热爱生活
 ---
 {% include JB/setup %}
 
