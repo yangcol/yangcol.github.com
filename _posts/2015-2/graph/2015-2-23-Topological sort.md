@@ -2,7 +2,7 @@
 layout: post
 category : 算法
 tagline: "dag有向图"
-tags : [dag, graph]
+tags : [dag, graph, topology sort]
 ---
 
 >这是coursera上的princeton算法课程的读书笔记å
@@ -61,8 +61,23 @@ Case 1 => dfs(w)已经被调用，并且已经被返回。因此w在v之前被�
 
 Case 2 => dfs(w)没有被调用。那么，由于v->w有直接的边或者非直接的边，那么，一定会调用dfs(w)。然后w也被返回。
 
-
 Case 3 => dfs(w)已被调用，但是没有被返回，这样就会存在一个w ->v的边，构成环了，然后就会与DAG矛盾。
 
 ## Directed cycle detection
 如何检测一个环
+
+
+
+如果监测一个图有没有环?
+Proposition：A digraph has a topological order iff no directed cycle
+命题: 一个图，如果有拓扑顺序，那么就没有环
+证明: 
+	如果有环，那么就没有拓扑顺序（在上面的拓扑顺序已经证明了这一点）
+	如果没有环，那么就可以找到一个拓扑顺序，使用DFS-based算法可以找到这样的拓扑顺序。
+
+**还有其他方法吗？**
+当然有。在学习链表的时候，有可能面临过这样的问题: 怎么判断链表是否有环？
+一种方法是，遍历一个链表，一个采用步数为2，一个采用步数为1，如果他们在某个时候相遇(刚好走到同一个节点)，那么，这个链表是有环的。
+
+#TODO 图有环的其他方法
+
