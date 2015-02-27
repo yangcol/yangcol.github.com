@@ -10,15 +10,14 @@ title: "过程调用一定比GOTO要慢吗?"
 > 其实直到现在，依旧有这样的言论存在。
 > 等你把这篇论文看完后，你就会明白，过程调用不是非要比goto语句慢，如果真的慢了，是因为编译器不给力！
 
+> 原文标题
 > DEBUNKING THE "EXPENSIVE PROCEDURE CALL" MYTH or, PROCEDURE CALL IMPLEMENTATIONS CONSIDERED HARMFUL or, LAMBDA: THE ULTIMATE GOTO by Guy Lewis Steele Jr. *
 
-[原文下载地址](http://library.readscheme.org/page1.html)
-
+[原文下载地址](http://repository.readscheme.org/ftp/papers/ai-lab-pubs/AIM-443.pdf)
+[其他相关论文地址](http://library.readscheme.org/page1.html)
 #摘要:
 
 民间流传的说法是GOTO声明是很廉价的，过程调用是昂贵的。这种说法其实是语言设计的太糟糕了，而且这种说法还在变得更流行。在这篇文章中，从理论的思考以及一个已有的实现方式来打破这种说法。文章的结论表明：不限制过程调用的使用可以极大地提供文体(stylistic)的自由。尤其是，任意的流程图，都能够直接写成结构化的程序而不需要引入额外的变量。使用GOTO语句和过程调用的困难性被特征化为抽象程序概念和实际的语言构造之间的冲突。
-
-Keywords: procedure calls, subroutine calls, structured programming, programming style, compilers, optimization
 
 关键词: 过程调用, 子过程调用, 结构化编程, 变成风格, 编译器, 优化
 
