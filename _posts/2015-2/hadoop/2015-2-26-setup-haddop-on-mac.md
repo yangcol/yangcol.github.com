@@ -19,18 +19,18 @@ title: "在mac上安装hadoop"
 
 ##步骤2:
 进入hadoop目录
-	$cd /usr/local/Cellar/hadoop/2.6.0/libexec
+	$ cd /usr/local/Cellar/hadoop/2.6.0/libexec
 
 如果目录结构不一样，可以使用
 
-	$ls -l $(which hadoop)
+	$ ls -l $(which hadoop)
 
 查看hadoop的执行文件在哪个目录下
 
 ##步骤3:
 试一下能否ssh localhost
 
-	$ssh localhost
+	$ ssh localhost
 
 如果不能正确执行，尝试下面的办法:
 
@@ -39,12 +39,12 @@ title: "在mac上安装hadoop"
 
 启动sshd服务:
 
-	$sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+	$ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 
 
 查看是否启动：
 
-	$sudo launchctl list | grep ssh
+	$ sudo launchctl list | grep ssh
 
 如果看到下面的输出表示成功启动了:
 
@@ -119,9 +119,9 @@ hadoop守护进程的日志输出到$HADOOP_LOG_DIR目录(默认是$HADOOP_HOME/
 
 把输出文件从分布式文件系统拷贝到本地并且进行检查:
 
-	$bin/hdfs dfs -get output output
+	$ bin/hdfs dfs -get output output
 
-	$cat output/*
+	$ cat output/*
 
 或者:
 
@@ -131,4 +131,4 @@ hadoop守护进程的日志输出到$HADOOP_LOG_DIR目录(默认是$HADOOP_HOME/
 
 如果不再使用，把守护进程停掉:
 
-	 $ sbin/stop-dfs.sh
+	$ sbin/stop-dfs.sh
