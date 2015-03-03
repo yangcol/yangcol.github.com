@@ -2,7 +2,7 @@
 layout: post
 category : 搜索
 tagline: "搜索,统计"
-tags : [elasticsearch, kibana]
+tags : [elasticsearch, kibana, logstash]
 ---
 
 
@@ -14,12 +14,58 @@ tags : [elasticsearch, kibana]
 
 * 修改config文件
 
+其实不修改也可以，默认访问localhost:9200
+
 启动web服务
 
 其实启动web服务很简单，使用python就可以
 **我在这里卡过一些时间，网上的资料总让你用apache来弄，结果整半天apache的环境**
 
-	sudo python -m SimpleHTTPServer 80
+	$ python -m SimpleHTTPServer 80
 
 
 ## Logstash
+
+logstash使用jruby写的日志分发，可以把日志分发给elasticsearch，它会与elasticsearch组成一个集群，并作为一个transport节点。
+
+grok的匹配可以在[http://grokconstructor.appspot.com/do/match#result](http://grokconstructor.appspot.com/do/match#result)进行测试，grok的匹配语法与正则一致
+	
+比如这样的日志类型:
+	2015-01-04 11:17:00  INFO   - ["stat",2,"sql","UPDATE cache Set changed=? WHERE `list`=? And k =?",22,["2015-01-04T03:17:00.115Z","object","homehot_118"]]
+
+对应的配置文件如下:
+
+	input {
+	  file {
+	    path => "/Users/yangqing/project/baozi/baoz/log/access/access*"
+	    start_position => beginning
+	  }
+	}
+
+	filter {
+	    grok {
+	      match => {"message"=> '%{TIMESTAMP_ISO8601:timestamp}\s+%{LOGLEVEL:loglevel}\s+-\s+\["%{WORD:key1}",%{INT:version},"%{DATA:key2}","%{DATA:detail}",%{INT:runtime},%{GREEDYDATA:extension}\]'}
+	    } 
+	}
+
+	output {
+	  elasticsearch {
+	    host => localhost
+	  }
+	  stdout { codec => rubydebug }
+	}
+
+然后使用
+	$ bin/logstash -f {my_conf_file}
+
+## Kibana
+Kibana可以用来显示各个分布，把kibana里面用的组件做一个简要说明：
+
+* Kibana的配置是存在elasticsearch当中的，默认使用的es index名称是kibana-int（可配置）。
+* Kibana的DashBoard可对应1个或者多个index，在Dash Board的配置中进行设置。
+* DashBoard设置完成后，创建一个Row，这个Row不提供具体的功能，只是对应页面上的大小，宽度等。
+* 创建Row以后，可以创建Panel。每一个Panel对应一个特定的统计功能。
+* 如果需要查看Pv统计项，就是用histogram功能即可，进一步配置时间，值等。
+* map面板提供了一个地图，可以在地图上显示分布。
+
+##TODO

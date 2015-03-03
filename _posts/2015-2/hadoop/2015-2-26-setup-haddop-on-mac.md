@@ -132,3 +132,7 @@ hadoop守护进程的日志输出到$HADOOP_LOG_DIR目录(默认是$HADOOP_HOME/
 如果不再使用，把守护进程停掉:
 
 	$ sbin/stop-dfs.sh
+
+## 在浏览器上查看
+
+http://localhost:50075/
