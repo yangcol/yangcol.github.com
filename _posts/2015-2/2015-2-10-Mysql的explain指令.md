@@ -36,3 +36,33 @@ rows：MYSQL认为必须检查的用来返回请求数据的行数
 2. 这个数值将会作为mysql优化器对语句执行计划进行判定时依据。如果唯一性太小，那么优化器会认为，这个索引对语句没有太大帮助，而不使用索引。
 3. cardinality值越大，就意味着，使用索引能排除越多的数据，执行也更为高效。
 
+
+##MySQL如何查询当前正在运行的SQL语句
+作者：zhaolinjnu出处：IT专家网2008-04-21 08:30
+　　通过status命令，查看Slow queries这一项，如果值长时间>0,说明有查询执行时间过长
+以下是引用片段：
+　　mysql> status; 
+　　-------------- 
+　　mysql Ver 11.18 Distrib 3.23.58, for redhat-linux-gnu (i386) 
+　　Connection id: 53 
+　　Current database: (null) 
+　　Current user: root@localhost 
+　　Current pager: stdout 
+　　Using outfile: '' 
+　　Server version: 5.0.37-log 
+　　Protocol version: 10 
+　　Connection: Localhost via UNIX socket 
+　　Client characterset: latin1 
+　　Server characterset: latin1 
+　　UNIX socket: /tmp/mysql.sock 
+　　Uptime: 4 days 16 hours 49 min 57 sec 
+　　Threads: 1 Questions: 706 Slow queries: 0 Opens: 177 Flush tables: 1 Open tables: 52 Queries per second avg: 0.002 
+　　--------------
+　　这时再通过show processlist命令来查看当前正在运行的SQL，从中找出运行慢的SQL语句，找到执行慢的语句后，再用explain命令查看这些语句的执行计划。
+　　mysql> show processlist;
+　　+----+------+-----------+------+---------+------+-------+------------------+
+　　| Id | User | Host | db | Command | Time | State | Info |
+　　+----+------+-----------+------+---------+------+-------+------------------+
+　　| 53 | root | localhost | NULL | Query | 0 | NULL | show processlist |
+　　+----+------+-----------+------+---------+------+-------+------------------+
+　　1 row in set (0.00 sec)
