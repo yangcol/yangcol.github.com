@@ -1,0 +1,1 @@
+ rails generate refinery:engine event title:string date:datetime photo:image blurb:text
