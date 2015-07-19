@@ -6,7 +6,7 @@ group: aboutme
 ---
 {% include JB/setup %}
 
-## 这是我的关于页面
+## 一直是一个比较低调的程序员
 
 
 联系方式：
